@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>Conflict Coach with Dr. Emily Taylor</title>
+    
+    <!-- Cache Busting -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>document.title = 'Conflict Coach with Dr. Emily Taylor';</script>
+
+    <link type="text/css" rel="stylesheet" href="lib/icomoon.css">
+    <!-- Visual Cards CSS Override -->
+    <link type="text/css" rel="stylesheet" href="visual-cards.css?v=10">
+    <script type="text/javascript" src="lib/player-0.0.11.min.js"></script>
+    <script type="text/javascript" src="lib/lzwcompress.js"></script>
+
+    <!-- Resize Hack -->
+    <script type="text/javascript">
+      window.resizeTo(screen.width, screen.height);
+    </script>
+    
+
+    <script id="__ENTRY__" type="application/json">
+      {".js":["rise/70faba37.js"],".css":["sandbox/4adfab46.css"]}
+    </script>
+
+    <script id="__REMOTE_ENTRIES__" type="application/json">
+      {"mondrian":{".js":["mondrian/entry.js"]}}
+    </script>
+
+    <script>
+      (function() {
+        const jsonp = {}
+
+        function loadModule(manifest) {
+          const p = []
+
+          if (manifest['.css'] != null) {
+            for (var idx = 0; idx < manifest['.css'].length; idx++) {
+              p.push(new Promise((resolve, reject) => {
+                var link = document.createElement('link')
+                link.onload = resolve
+                link.onerror = reject
+                link.rel = 'stylesheet'
+                link.href = 'lib/' + manifest['.css'][idx]
+                document.body.appendChild(link)
+              }))
+            }
+          }
+
+          if (manifest['.js'] != null) {
+            for (var idx = 0; idx < manifest['.js'].length; idx++) {
+              p.push(new Promise((resolve, reject) => {
+                var script = document.createElement('script')
+                script.onload = resolve
+                script.onerror = reject
+                script.src = 'lib/' + manifest['.js'][idx]
+                document.body.appendChild(script)
+              }))
+            }
+          }
+
+          return Promise.all(p)
+        }
+
+        function deserialize(str) {
+          const buffer = Uint8Array.from(atob(str), c => c.charCodeAt(0))
+          const json = new TextDecoder().decode(buffer)
+          const result = JSON.parse(json)
+          return result
+        }
+
+        function __loadEntry() {
+          return loadModule(JSON.parse(document.getElementById('__ENTRY__').textContent))
+        }
+
+        function __loadRemoteEntry(name) {
+          const manifest = JSON.parse(document.getElementById('__REMOTE_ENTRIES__').textContent)
+          if (manifest[name] == null) throw new Error(`Missing manifest for remote entry "${name}".`)
+          return loadModule(manifest[name])
+        }
+        
+        async function __loadJsonp(id, path) {
+          try {
+            return await new Promise((resolve, reject) => {
+              try {
+                jsonp[id] = resolve
+                const script = document.createElement('script')
+                script.onerror = reject
+                script.src = `./${path}`
+                document.head.appendChild(script)
+              } catch (err) {
+                reject(err)
+              }
+            })
+          } finally {
+            delete jsonp[id]
+          }
+        }
+
+        function __resolveJsonp(id, data) {
+          const resolve = jsonp[id]
+          if (typeof resolve !== 'function') {
+            throw new Error(`Could not load JSONP "${id}"`)
+          }
+          resolve(data)
+        }
+
+        async function __fetchCourse(name) {
+          name = name == null ? window.i18n.default : name
+          if (!window.i18n.available.includes(name)) {
+            console.warn(`Could not load locale "${name}"`)
+            name = window.i18n.available[0]
+          }
+          const encoded = await __loadJsonp(`course:${name}`, `locales/${name}.js`)
+          const courseData = deserialize(encoded)
+          return courseData
+        }
+
+        window.__loadEntry = __loadEntry
+        window.__loadRemoteEntry = __loadRemoteEntry
+        window.__loadJsonp = __loadJsonp
+        window.__resolveJsonp = __resolveJsonp
+        window.__fetchCourse = __fetchCourse
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+  (function(root) {
+    window.i18n = {"available":["en"],"default":"en"};
+    window.partnerContent = [];
+
+    function isExport() {
+      return true;
+    }
+
+    function resolvePath(path) {
+      return ('assets/').concat(path);
+    }
+
+    function resolveFontPath(font) {
+      return ('lib/fonts/').concat(font.key.split('/').reverse()[0]);
+    }
+
+    function fetchAvailableLocales() {
+      return window.i18n
+    }
+
+    root.Runtime = {
+      fetch: window.__fetchCourse,
+      fetchAvailableLocales: fetchAvailableLocales,
+      isExport: isExport,
+      resolvePath: resolvePath,
+      resolveFontPath: resolveFontPath
+    };
+  }(window));
+</script>
+
+    
+    <script>__loadEntry()</script>
+    
+    <!-- Force Title Override -->
+    <script>
+    function forceTitle() {
+        // Override document title
+        document.title = 'Conflict Coach with Dr. Emily Taylor';
+        
+        // Override any title elements that might appear
+        const titleElements = document.querySelectorAll('.cover-page__title, .home-hero__title, .nav-sidebar-header__title, .nav-compact__header-title-link, .nav-overlay__header-title');
+        titleElements.forEach(el => {
+            if (el.textContent.includes('Jordan Charles') || el.textContent.includes('Test blank')) {
+                el.textContent = 'Conflict Coach with Dr. Emily Taylor';
+            }
+        });
+    }
+    
+    function forceVisualCards() {
+        // Force our visual cards layout
+        const overviewList = document.querySelector('.cover__details .overview-list');
+        if (overviewList) {
+            console.log('Forcing visual cards layout...');
+            
+            // Remove any Rise-applied classes that might interfere
+            overviewList.classList.remove('flex', 'flexbox', 'row', 'column');
+            
+            // Apply grid layout forcefully
+            overviewList.style.setProperty('display', 'grid', 'important');
+            overviewList.style.setProperty('grid-template-columns', 'repeat(auto-fit, minmax(380px, 1fr))', 'important');
+            overviewList.style.setProperty('gap', '2.5rem', 'important');
+            overviewList.style.setProperty('padding', '2rem', 'important');
+            overviewList.style.setProperty('max-width', '1600px', 'important');
+            overviewList.style.setProperty('margin', '0 auto', 'important');
+            overviewList.style.setProperty('width', '100%', 'important');
+            overviewList.style.setProperty('box-sizing', 'border-box', 'important');
+            
+            // Remove flexbox properties
+            overviewList.style.removeProperty('flex-direction');
+            overviewList.style.removeProperty('flex-wrap');
+            overviewList.style.removeProperty('justify-content');
+            overviewList.style.removeProperty('align-items');
+            overviewList.style.removeProperty('align-content');
+            
+            // Force sections to display: contents
+            const sections = overviewList.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.setProperty('display', 'contents', 'important');
+                section.style.removeProperty('flex');
+                section.style.removeProperty('width');
+                section.style.removeProperty('height');
+            });
+            
+            // Force individual cards
+            const cards = overviewList.querySelectorAll('.overview-list-item');
+            cards.forEach((card, index) => {
+                card.style.setProperty('min-height', '380px', 'important');
+                card.style.setProperty('border-radius', '12px', 'important');
+                card.style.setProperty('overflow', 'hidden', 'important');
+                card.style.setProperty('box-shadow', '0 8px 32px rgba(0,0,0,0.2)', 'important');
+                card.style.setProperty('position', 'relative', 'important');
+                card.style.setProperty('display', 'flex', 'important');
+                card.style.setProperty('flex-direction', 'column', 'important');
+                card.style.setProperty('width', '100%', 'important');
+                card.style.setProperty('height', 'auto', 'important');
+                card.style.setProperty('background-size', 'cover', 'important');
+                card.style.setProperty('background-position', 'center', 'important');
+                card.style.setProperty('background-repeat', 'no-repeat', 'important');
+                
+                // Remove flex properties that might interfere
+                card.style.removeProperty('flex-basis');
+                card.style.removeProperty('flex-grow');
+                card.style.removeProperty('flex-shrink');
+                card.style.setProperty('margin', '0', 'important');
+                card.style.setProperty('flex', 'none', 'important');
+                
+                console.log(`Card ${index + 1} styles applied`);
+            });
+            
+            // Force card links
+            const cardLinks = overviewList.querySelectorAll('.overview-list-item__link');
+            cardLinks.forEach(link => {
+                link.style.setProperty('position', 'absolute', 'important');
+                link.style.setProperty('top', '0', 'important');
+                link.style.setProperty('left', '0', 'important');
+                link.style.setProperty('width', '100%', 'important');
+                link.style.setProperty('height', '100%', 'important');
+                link.style.setProperty('padding', '2rem', 'important');
+                link.style.setProperty('display', 'flex', 'important');
+                link.style.setProperty('flex-direction', 'column', 'important');
+                link.style.setProperty('justify-content', 'flex-end', 'important');
+                link.style.setProperty('z-index', '10', 'important');
+                link.style.setProperty('box-sizing', 'border-box', 'important');
+            });
+            
+            // Debug: Check background images
+            cards.forEach((card, index) => {
+                const computedStyle = window.getComputedStyle(card);
+                const bgImage = computedStyle.backgroundImage;
+                console.log(`Card ${index + 1} background:`, bgImage);
+                if (bgImage === 'none' || bgImage === '') {
+                    console.warn(`⚠️ Card ${index + 1} missing background image!`);
+                }
+            });
+            
+            console.log('✅ Visual cards layout enforced!', {
+                gridColumns: window.getComputedStyle(overviewList).gridTemplateColumns,
+                display: window.getComputedStyle(overviewList).display,
+                cardCount: cards.length
+            });
+        } else {
+            console.log('Overview list not found yet...');
+        }
+    }
+    
+    function enforceStyles() {
+        forceTitle();
+        forceVisualCards();
+    }
+    
+    // Run immediately and on DOM changes
+    enforceStyles();
+    setInterval(enforceStyles, 1000);
+    
+    // Also run after page loads
+    window.addEventListener('load', enforceStyles);
+    document.addEventListener('DOMContentLoaded', enforceStyles);
+    
+    // Watch for DOM changes and re-apply styles
+    const observer = new MutationObserver(function(mutations) {
+        let shouldUpdate = false;
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' || mutation.type === 'attributes') {
+                shouldUpdate = true;
+            }
+        });
+        if (shouldUpdate) {
+            setTimeout(enforceStyles, 100);
+        }
+    });
+    
+    // Start observing
+    setTimeout(() => {
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['style', 'class']
+        });
+    }, 1000);
+    </script>
+    
+  </body>
+</html>

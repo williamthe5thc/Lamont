@@ -1,0 +1,699 @@
+/* ANTI-RISE OVERRIDES - Maximum specificity to prevent JavaScript overrides */
+body .cover__details .overview-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)) !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    align-content: unset !important;
+}
+
+body .cover__details .overview-list-item {
+    width: auto !important;
+    height: auto !important;
+    min-height: 380px !important;
+    flex: none !important;
+    flex-basis: auto !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+/* Prevent Rise from applying flex to sections */
+body .cover__details .overview-list section {
+    display: contents !important;
+    flex: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Force grid even harder */
+html body .cover__details .overview-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)) !important;
+}
+
+/* ============================================
+   RISE 360 VISUAL CARD TRANSFORMATION
+   Conflict Coach with Dr. Emily Taylor
+   This CSS transforms the default Rise navigation 
+   into beautiful visual cards while maintaining 
+   all functionality
+============================================ */
+
+/* Custom Banner/Cover Image */
+.classic .cover-page,
+.classic .cover-page__background,
+.classic .cover-page__background-image,
+.classic .home-hero,
+.classic .home-hero__background,
+.classic .lesson-header,
+.classic .lesson-header__background {
+    background-image: url('assets/pVmhk4cbksxdRb4N.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Update Course Title */
+.classic .cover-page__title,
+.classic .home-hero__title,
+.classic .nav-sidebar-header__title,
+.classic .nav-compact__header-title-link,
+.classic .nav-overlay__header-title {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Update navigation header titles */
+.classic .nav-sidebar-header__title::before,
+.classic .nav-compact__header-title-link::before,
+.classic .nav-overlay__header-title::before {
+    content: 'Conflict Coach with Dr. Emily Taylor' !important;
+    display: block !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #333 !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+.classic .nav-sidebar-header__title,
+.classic .nav-compact__header-title-link,
+.classic .nav-overlay__header-title {
+    font-size: 0 !important; /* Hide original title */
+}
+
+.classic .cover-page__title::before,
+.classic .home-hero__title::before {
+    content: 'Conflict Coach with Dr. Emily Taylor' !important;
+    display: block !important;
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+}
+
+.classic .cover-page__title,
+.classic .home-hero__title {
+    font-size: 0 !important; /* Hide original title */
+}
+
+/* Banner overlay for better text readability */
+.classic .cover-page::before,
+.classic .home-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(135deg, rgba(75, 170, 244, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%) !important;
+    z-index: 1 !important;
+}
+
+.classic .cover-page > *,
+.classic .home-hero > * {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Reset and prepare card container - ULTRA AGGRESSIVE GRID */
+.cover__details .overview-list,
+body .cover__details .overview-list,
+html .cover__details .overview-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)) !important;
+    gap: 2.5rem !important;
+    padding: 2rem !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+}
+
+/* Force grid layout with maximum specificity */
+.cover__details .overview-list,
+.cover__details .overview-list > *,
+.cover__details .overview-list section,
+body .cover__details .overview-list,
+body .cover__details .overview-list > *,
+body .cover__details .overview-list section {
+    display: grid !important;
+}
+
+.cover__details .overview-list section,
+body .cover__details .overview-list section {
+    display: contents !important;
+}
+
+/* Transform each lesson item into a card - ULTRA AGGRESSIVE */
+.cover__details .overview-list-item,
+body .cover__details .overview-list-item,
+html .cover__details .overview-list-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    position: relative !important;
+    min-height: 380px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    margin: 0 !important;
+    flex: none !important;
+}
+
+/* Card hover effects */
+.cover__details .overview-list-item:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.3) !important;
+}
+
+/* Card backgrounds with lesson images - SECTION STRUCTURE */
+/* Lesson 1 - Don't Fly Off the Handle: Process and Prepare */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(1) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(30, 60, 114, 0.8) 0%, rgba(42, 82, 152, 0.8) 100%),
+        url('assets/CAROUSEL Ep 12 Process and Prepare-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 2 - Tired of the Same Fight? Make a Conflict Map! */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(2) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(19, 78, 94, 0.8) 0%, rgba(113, 178, 128, 0.8) 100%),
+        url('assets/CAROUSEL Ep 11 Mapping-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 3 - What's the Fight Really About? Remember TRIP! */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(3) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(142, 45, 226, 0.8) 0%, rgba(74, 0, 224, 0.8) 100%),
+        url('assets/CAROUSEL Ep 10 TRIP Acronym-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 4 - Struggling with Work Life Balance? Try this! */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(4) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(240, 147, 251, 0.8) 0%, rgba(245, 87, 108, 0.8) 100%),
+        url('assets/CAROUSEL Ep 9 Work-Life Balance-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 5 - Challenging the Narrative */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(5) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(255, 107, 107, 0.8) 0%, rgba(255, 142, 83, 0.8) 100%),
+        url('assets/CC Ep 2 Challenge Narrative-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 6 - Have a tough conversation coming? Don't Forget to Take Time to: Practice */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(6) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(106, 17, 203, 0.8) 0%, rgba(37, 117, 252, 0.8) 100%),
+        url('assets/CC Ep4 Practice-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 7 - Stuck at a impasse? Try Détente! */
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(1) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(67, 56, 202, 0.8) 0%, rgba(168, 85, 247, 0.8) 100%),
+        url('assets/CC Detente Carousel Ep2-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 8 - Expecting a Conflict (Be Proactive) */
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(2) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(34, 197, 94, 0.8) 0%, rgba(59, 130, 246, 0.8) 100%),
+        url('assets/CAROUSEL Ep5 Be Proactive-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 9 - Overwhelmed by endless information? Go With Your Gut! */
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(3) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(251, 146, 60, 0.8) 0%, rgba(249, 115, 22, 0.8) 100%),
+        url('assets/CAROUSEL Ep 6 Go With Your Gut-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 10 - Heading to a Conflict? Know Your Position & Interest! */
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(4) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(236, 72, 153, 0.8) 0%, rgba(168, 85, 247, 0.8) 100%),
+        url('assets/CAROUSEL Ep8 Position and Interest-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Lesson 11 - Five Ways to Resolve Conflict */
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(5) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(14, 165, 233, 0.8) 0%, rgba(59, 130, 246, 0.8) 100%),
+        url('assets/CAROUSEL Ep 7 Conflict Approaches-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Additional lessons beyond the main 11 */
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(6) .overview-list-item {
+    background: 
+        linear-gradient(135deg, rgba(161, 28, 106, 0.8) 0%, rgba(219, 39, 119, 0.8) 100%),
+        url('assets/CAROUSEL Ep5 Be Proactive-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-blend-mode: overlay !important;
+}
+
+/* Default fallback for lessons beyond the mapped ones */
+.cover__details .overview-list .overview-list__li:nth-of-type(n+13) .overview-list-item {
+    background: linear-gradient(135deg, rgba(103, 58, 183, 0.8) 0%, rgba(63, 81, 181, 0.8) 100%) !important;
+}
+
+/* Ensure all background images load properly - force reload if needed */
+.cover__details .overview-list-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Status badge styling */
+.cover__details .lesson-progress {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    background: rgba(255,255,255,0.9) !important;
+    border-radius: 20px !important;
+    padding: 0.5rem !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    z-index: 15 !important;
+}
+
+/* Card content styling - FULL CLICKABLE AREA */
+.cover__details .overview-list-item__link {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 100% !important;
+    width: 100% !important;
+    padding: 2rem !important;
+    color: white !important;
+    text-decoration: none !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    box-sizing: border-box !important;
+}
+
+/* Lesson title styling with better readability */
+.cover__details .overview-list-item__title {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8) !important;
+    color: white !important;
+    margin-top: auto !important;
+    background: rgba(0,0,0,0.7) !important;
+    padding: 1.2rem !important;
+    border-radius: 8px !important;
+    backdrop-filter: blur(4px) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Lesson icon styling */
+.cover__details .overview-list-item__icon {
+    position: absolute !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    background: rgba(255,255,255,0.2) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-weight: bold !important;
+    z-index: 15 !important;
+}
+
+/* Add lesson descriptions with better readability */
+.cover__details .overview-list-item__link::after {
+    content: attr(data-description) !important;
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    opacity: 0.95 !important;
+    margin-top: 0.5rem !important;
+    display: block !important;
+    color: white !important;
+    background: rgba(0,0,0,0.7) !important;
+    padding: 1.2rem !important;
+    border-radius: 8px !important;
+    backdrop-filter: blur(4px) !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8) !important;
+}
+
+/* Add custom descriptions for each lesson */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(1) .overview-list-item__link::after {
+    content: "Master the essential techniques for staying grounded and prepared when dealing with difficult conversations and tense encounters." !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(2) .overview-list-item__link::after {
+    content: "Learn to create comprehensive conflict maps to better understand and navigate complex interpersonal disputes." !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(3) .overview-list-item__link::after {
+    content: "Discover the powerful TRIP methodology for analyzing conflicts and identifying their root causes effectively." !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(4) .overview-list-item__link::after {
+    content: "Practical strategies for creating healthy boundaries between work and personal life to reduce conflict stress." !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(5) .overview-list-item__link::after {
+    content: "Challenge your assumptions and broaden your perspective to find new solutions to persistent conflicts." !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(6) .overview-list-item__link::after {
+    content: "Essential preparation strategies including role-playing and rehearsal techniques for difficult conversations." !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(1) .overview-list-item__link::after {
+    content: "When full resolution isn't possible, learn how to find temporary peace and partial solutions that work." !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(2) .overview-list-item__link::after {
+    content: "Proactive strategies for preventing conflicts before they escalate and maintaining harmony in relationships." !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(3) .overview-list-item__link::after {
+    content: "Learn to trust your intuition and make confident decisions even when faced with overwhelming information." !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(4) .overview-list-item__link::after {
+    content: "Understand the difference between positions and interests to find creative win-win solutions in conflicts." !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(5) .overview-list-item__link::after {
+    content: "Explore five distinct approaches to conflict resolution and learn when each strategy is most effective." !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .cover__details .overview-list {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .cover__details .overview-list-item {
+        min-height: 320px !important;
+    }
+
+    .cover__details .overview-list-item__link {
+        font-size: 1.5rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .cover__details .overview-list-item__title {
+        font-size: 1.4rem !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .cover__details .overview-list {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 3rem !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .cover__details .overview-list {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2.5rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .cover__details .overview-list {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
+/* Hide section headers for cleaner look */
+.cover__details .overview-list__section-title {
+    display: none !important;
+}
+
+/* Additional animations */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cover__details .overview-list-item {
+    animation: cardEntrance 0.6s ease-out !important;
+}
+
+/* Stagger animation delays */
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(1) .overview-list-item {
+    animation-delay: 0.1s !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(2) .overview-list-item {
+    animation-delay: 0.2s !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(3) .overview-list-item {
+    animation-delay: 0.3s !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(4) .overview-list-item {
+    animation-delay: 0.4s !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(5) .overview-list-item {
+    animation-delay: 0.5s !important;
+}
+
+.cover__details .overview-list section:first-child .overview-list__li:nth-child(6) .overview-list-item {
+    animation-delay: 0.6s !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(1) .overview-list-item {
+    animation-delay: 0.7s !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(2) .overview-list-item {
+    animation-delay: 0.8s !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(3) .overview-list-item {
+    animation-delay: 0.9s !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(4) .overview-list-item {
+    animation-delay: 1.0s !important;
+}
+
+.cover__details .overview-list section:last-child .overview-list__li:nth-child(5) .overview-list-item {
+    animation-delay: 1.1s !important;
+}
+
+/* Clean up default hover states */
+.cover__details .overview-list-item__link:hover {
+    background-color: transparent !important;
+}
+
+/* Ensure progress circle is visible */
+.cover__details .overview-list-item__progress-circle {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 100% !important;
+    flex-direction: column !important;
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION OPTIONS
+   Small thumbnails for sidebar navigation
+============================================ */
+
+.overview-list:not(.cover__details .overview-list) {
+    display: block !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list-item:hover {
+    background-color: rgba(75, 170, 244, 0.1) !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list-item::before {
+    content: '' !important;
+    width: 60px !important;
+    height: 40px !important;
+    margin-right: 1rem !important;
+    border-radius: 4px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    flex-shrink: 0 !important;
+}
+
+/* Sidebar thumbnails mapping */
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(1) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep 12 Process and Prepare-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(2) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep 11 Mapping-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(3) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep 10 TRIP Acronym-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(4) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep 9 Work-Life Balance-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(5) .overview-list-item::before {
+    background-image: url('assets/CC Ep 2 Challenge Narrative-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(6) .overview-list-item::before {
+    background-image: url('assets/CC Ep4 Practice-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(7) .overview-list-item::before {
+    background-image: url('assets/CC Detente Carousel Ep2-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(8) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep5 Be Proactive-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(9) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep 6 Go With Your Gut-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(10) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep8 Position and Interest-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list__li:nth-child(11) .overview-list-item::before {
+    background-image: url('assets/CAROUSEL Ep 7 Conflict Approaches-1.png') !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list-item__link {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+.overview-list:not(.cover__details .overview-list) .overview-list-item__title {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    color: #333 !important;
+}
+
+/* ============================================
+   FINAL ULTRA-AGGRESSIVE OVERRIDES
+   Applied at the end for maximum priority
+============================================ */
+
+/* NUCLEAR OPTION - Force grid layout with maximum CSS specificity */
+html body .cover__details .overview-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)) !important;
+    gap: 2.5rem !important;
+    padding: 2rem !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    align-content: unset !important;
+}
+
+html body .cover__details .overview-list section {
+    display: contents !important;
+}
+
+html body .cover__details .overview-list-item {
+    min-height: 380px !important;
+    width: auto !important;
+    height: auto !important;
+    flex: none !important;
+    margin: 0 !important;
+    position: relative !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
